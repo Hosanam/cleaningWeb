@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pricing.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+ <!-- Header / Navbar -->
+<header class="navbar">
+
+  <!-- Hamburger Menu -->
+<div class="hamburger">
+  ☰
+</div>
+
+  <!-- Logo (clickable to home page) -->
+  <a href="#home" class="logo">
+    <img src="./image/logo.png" alt="Haile Adhane Logo">
+  </a>
+
+  <!-- Menu -->
+  <nav class="menu">
+    <a href="./index.html#home">Home</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#testimonial">Testimonials</a>
+  </nav>
+
+  <!-- Book Now Button -->
+<a href="./pricing.html" class="book-btn">Book Now</a>
+
+</header>
+
+
+  <!-- Intro -->
+  <section class="intro">
+    <h1>Book an Office Cleaning Service</h1>
+    <p>We offer daily, weekly, and one-time cleaning services tailored to your needs.</p>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking">
+    <div class="form-container">
+      <h2>Get Your Cleaning Service</h2>
+      <form id="cleaningForm">
+        <div class="form-group">
+          <label for="cleaners">How many cleaners do you need?*</label>
+          <select id="cleaners" required>
+            <option value="">Select number of cleaners</option>
+            <option value="1">1 Cleaner</option>
+            <option value="2">2 Cleaners</option>
+            <option value="3">3 Cleaners</option>
+            <option value="4">4 Cleaners</option>
+            <option value="5">5 Cleaners</option>
+            <option value="6">6 Cleaners</option>
+            <option value="7">7 Cleaners</option>
+            <option value="8">8 Cleaners</option>
+            <option value="9">9 Cleaners</option>
+            <option value="10">10 Cleaners</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hours">How many hours should they stay?*</label>
+          <select id="hours" required>
+            <option value="">Select hours</option>
+            <option value="1">1 Hour</option>
+            <option value="2">2 Hours</option>
+            <option value="3">3 Hours</option>
+            <option value="4">4 Hours</option>
+            <option value="5">5 Hours</option>
+            <option value="6">6 Hours</option>
+            <option value="7">7 Hours</option>
+            <option value="8">8 Hours</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="frequency">How often do you need cleaning?*</label>
+          <select id="frequency" required>
+            <option value="">Select frequency</option>
+            <option value="Once - Book a one-time cleaning session">Once</option>
+            <option value="Weekly - Get the same cleaner each time">Weekly</option>
+            <option value="Multiple times a week - Get the same cleaner each time">Multiple times a week</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="materials">Do you need cleaning materials?*</label>
+          <select id="materials" required>
+            <option value="">Select option</option>
+            <option value="Yes - Cleaning materials included">Yes</option>
+            <option value="No - Provide my own materials">No</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn" onclick="generateSummary()">Next: Summary</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Summary Section -->
+<section class="summary" id="summary" style="display:none;">
+  <div class="summary-container">
+    <h2>Your Booking Summary</h2>
+    <div class="summary-grid">
+      <span class="summary-label">Cleaners</span>
+      <span class="summary-value" id="summaryCleaners"></span>
+      
+
+     
+      <span class="summary-label">Hours</span>
+ <span class="summary-value" id="summaryHours"></span>
+
+ <span class="summary-label">Frequency</span>
+      <span class="summary-value" id="summaryFrequency"></span>
+      
+<span class="summary-label">Materials</span>
+      <span class="summary-value" id="summaryMaterials"></span>
+      
+
+      <hr class="full-width">
+<span class="summary-label">Service Charge</span>
+      <span class="summary-value" id="serviceCharge"></span>
+      
+<span class="summary-label">Subtotal</span>
+      <span class="summary-value" id="subTotal"></span>
+      
+<span class="summary-label">VAT (5%)</span>
+      <span class="summary-value" id="vat"></span>
+      
+<span class="summary-label">Total to Pay</span>
+      <span class="summary-value" id="totalPay"></span>
+      
+    </div>
+
+    <button class="btn book-now">Book Now</button>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Cleaning Services. All Rights Reserved.</p>
+  </footer>
+
+<script>
+function generateSummary() {
+  const cleaners = parseInt(document.getElementById('cleaners').value);
+  const hours = parseInt(document.getElementById('hours').value);
+  const frequency = document.getElementById('frequency').value;
+  const materials = document.getElementById('materials').value;
+
+  if (!cleaners || !hours || !frequency || !materials) {
+    alert("Please fill all required fields.");
+    return;
+  }
+
+  // Price calculation
+  const baseRate = 81;
+  const serviceCharge = cleaners * hours * baseRate;
+  const subTotal = serviceCharge;
+  const vat = subTotal * 0.05;
+  const totalPay = subTotal + vat;
+
+  document.getElementById('summaryCleaners').textContent = cleaners + (cleaners>1?" Cleaners":" Cleaner");
+  document.getElementById('summaryHours').textContent = hours + (hours>1?" Hours":" Hour");
+  document.getElementById('summaryFrequency').textContent = frequency;
+  document.getElementById('summaryMaterials').textContent = materials;
+
+  document.getElementById('serviceCharge').textContent = "AED " + serviceCharge.toFixed(2);
+  document.getElementById('subTotal').textContent = "AED " + subTotal.toFixed(2);
+  document.getElementById('vat').textContent = "AED " + vat.toFixed(2);
+  document.getElementById('totalPay').textContent = "AED " + totalPay.toFixed(2);
+
+  document.getElementById('summary').style.display = "block";
+  window.scrollTo({top: document.getElementById('summary').offsetTop, behavior: 'smooth'});
+}
+</script>
+
+</body>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.menu');
+
+  // Toggle menu when hamburger clicked
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  // Hide menu automatically when scrolling
+  window.addEventListener('scroll', () => {
+    if (menu.classList.contains('show')) {
+      menu.classList.remove('show');
+    }
+  });
+</script>
+
+</html>
