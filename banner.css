@@ -1,0 +1,215 @@
+
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      min-width: 400px !important;
+    }
+/* Banner section */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  overflow: hidden;
+  color: #fff;
+}
+/* .we{
+  font-weight: 700;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: bold;
+  font-size: 40px;
+
+} */
+/* .banner{
+  padding-bottom: 110px !important;
+} */
+
+/* Background image layer */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+  linear-gradient(to right, rgb(0 91 255 / 62%), rgb(231 62 62 / 17%)), url(./images/cleanHomeOrange.png) center / cover no-repeat;
+  z-index: 0; /* stays behind text & images */
+}
+
+
+
+/* Content wrapper (kept above background) */
+.banner-content,
+.banner-left,
+.banner-right {
+  position: relative;
+  z-index: 1; /* keeps text & images above */
+}
+
+/* Left text */
+.banner-left {
+  max-width: 80%;
+}
+
+.banner-right{
+  padding-right: 5%;
+  max-height: fit-content;
+}
+
+.banner-left h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  color: #e26b33;
+  margin-left: -10px;
+}
+
+.banner-left h1 {
+  font-size: 47px;
+  margin: 1px 0;
+  font-weight: bold;
+  color: #e26b33;
+}
+
+.banner-left .p1 {
+  font-size: 36px;
+  /* margin: 15px 0; */
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.banner-left .p2{
+  color: #cecece;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #317f93;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn2 {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: #e26b33;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005fa3;
+}
+
+.btn2:hover {
+  background: #005fa3;
+}
+
+/* .contact {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #e26b33;
+} */
+
+/* Right image */
+.banner-right img {
+  width: 334px;
+  border-radius: 12px;
+ /* box-shadow: 0 6px 20px rgba(0,0,0,0.3); */
+}
+
+/* Desktop image visible by default */
+.desktop-img {
+  display: block;
+  width: 100%;
+  max-width: 612px;
+}
+
+.mobile-img {
+  display: none;
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Responsive: Keep desktop-style layout on mobile */
+@media (max-width: 900px) {
+  .banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* text on left */
+    padding: 30px 20px;
+    height: 500px;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  
+  /* Text always in front */
+  .banner-left {
+    position: relative;
+    z-index: 2; /* above image */
+    max-width: 80%;
+    /* color: #fff; */
+  }
+
+  .banner-left h1 {
+    font-size: 37px;
+    color: #e26b33;
+  }
+
+  .banner-left h2 {
+    font-size: 18px;
+    color: #e26b33;
+  }
+
+  .banner-left .p1 {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  /* Image behind text */
+  .banner-right {
+    position: absolute;
+    right: 0;
+    /* top: 0; */
+    bottom: 0;
+    z-index: 1; /* behind text */
+    padding-right: 2%;
+    margin-right: -33px;
+  }
+
+  .banner-right img {
+    /* height: 100%; */
+    width: 293px;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  /* Optional: subtle gradient overlay to improve text readability */
+  .banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+   /* background: linear-gradient(to left, rgba(0,0,0,0.4), rgba(0,0,0,0));*/
+    z-index: 1; /* overlay above image, behind text */
+  }
+}
+
+
+
+
+
+
+
+  

@@ -69,8 +69,8 @@ body {
 /* Book Now Button */
 .book-btn {
   font-family: "Open Sans", sans-serif;
-  background: #fff;
-  color: #2948af;
+  background: #e26b33;
+  color: #ffffff;
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 6px;
@@ -85,118 +85,11 @@ body {
 
 
 
-/* Banner */
-.banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  gap: 40px;
-}
-
-.banner-text {
-  max-width: 600px;
-  background: #1e40af;
-  padding: 40px;
-  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.banner-text h1 {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.banner-text p {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-.banner-img img {
-  max-width: 400px;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-
-/* Banner */
-.banner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 60px;
-  gap: 40px;
-  position: relative;
-  overflow: hidden;
-  min-height: 500px;
-}
-
-/* Background Image */
-.banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("./image/Deep_Clean_Big_Difference.png") no-repeat center center/cover;
-  opacity: 0.3; /* Control transparency */
-  z-index: 0;
-}
-
-/* Left Text Box with Angle */
-.banner-text {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  background: rgba(30, 64, 175, 0.85); /* Blue with opacity */
-  padding: 40px;
-  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.banner-text h1 {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.banner-text p {
-  font-size: 20px;
-  font-weight: 300;
-}
-
-/* Banner subtext */
-.banner-subtext {
-  font-size: 18px;
-  line-height: 1.6;
-  opacity: 0.75;   /* Adjust opacity (0.5 to 1) */
-  color: #dfe9f8;  /* Slate dark for readability */
-  max-width: 500px;
-}
-
-
-.banner-img {
-  position: relative;
-  z-index: 1;
-}
-
-.banner-img img {
-  max-width: 400px;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Highlighted green box text */
 .highlight {
-  background: #22c55e;  /* Tailwind green-500 */
-  color: #000;          /* Black text inside */
-  padding: 0px 10px;    /* Space inside box */
-  border-radius: 6px;   /* Smooth corners */
-  display: inline-block;
-  font-weight: 600;
+  color: white; 
+  background-color: #317f93; 
+  padding: 2px 6px; 
+  border-radius: 4px; /* optional for smooth edges */
 }
 
 
@@ -281,7 +174,7 @@ body {
 
 .about-text p span {
   font-weight: 600;           /* bold for emphasis */
-  color: #1e40af;            /* accent color */
+  /* color: #1e40af;            accent color */
 }
 
 
@@ -349,7 +242,7 @@ body {
 .testimonial-card h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #ffffff;
+  color: #e26b33;
   margin-bottom: 10px;
 }
 
@@ -426,24 +319,39 @@ body {
 }
 
 
+.brand1 {
+  color: white;
+  background-color: #e26b33;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.brand2 {
+  color: white;
+  background-color: #317f93;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
 /* Contact Section */
 .contact {
   padding: 80px 60px;
   background: #f8fafc;
+  font-family: Arial, sans-serif;
 }
 
-/* Contact Section */
+/* Container */
 .contact-section {
   width: 100%;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
   background: #ffffff;         /* white/light background */
-  padding: 40px;
+  /* padding: 40px; */
+  padding: 40px 10px;
+  padding-left: 10px;
   border-radius: 16px;         /* smooth edges */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* shadow effect */
 }
-
 
 /* Left & Right Containers */
 .contact-info-left,
@@ -458,14 +366,8 @@ body {
   font-size: 32px;
   margin-bottom: 30px;
   position: relative;
-  color: #1e40af;
+  color: #317f93; /* teal brand color */
   text-align: center;
-}
-
-.contact-info-left h1,
-.contact-info-right h1 {
-  position: relative; /* required for pseudo-element positioning */
-  text-align: center; /* optional: center the text itself */
 }
 
 .contact-info-left h1::after,
@@ -477,7 +379,7 @@ body {
   transform: translateX(-50%); /* shift left by half its width to center */
   width: 60%;          /* length of the underline */
   height: 4px;         /* thickness of the line */
-  background: #94afe7;
+  background: #e26b33; /* orange underline */
   border-radius: 2px;
 }
 
@@ -490,22 +392,23 @@ body {
 }
 
 .contact-box {
-  background: #2563eb;
+  background: #317f93;   /* teal background */
   color: white;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.contact-box:hover {
-  transform: translateY(-5px);
+  transition: transform 0.3s, background 0.3s;
 }
 
 .contact-box h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #0a00cde1; 
+}
+
+.contact-box h3:hover{
+  /* color: #2563eb; */
 }
 
 .contact-box p {
@@ -513,18 +416,12 @@ body {
   line-height: 1.5;
 }
 
-/* Right Side: Send Message Form */
-.contact-info-right,
-.contact-info-left {
-  background: #f9fafc;
-  color: #1e40af;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-
-  /* Angled Rectangle */
-  /* clip-path: polygon(0 0, 95% 0, 100% 100%, 0 100%); */
+.contact-box:hover {
+  transform: translateY(-5px);
+  background: #e26b33; /* hover switches to orange */
+  color: white;
 }
+
 /* Right Side: Send Message Form */
 .contact-info-right {
   background: #f9fafc;   /* light background */
@@ -556,14 +453,25 @@ body {
   gap: 8px;
 }
 
+label {
+  font-weight: bold;
+  color: #317f93; /* teal labels */
+}
+
 .contact-info-right input,
 .contact-info-right textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #2563eb;
+  border: 2px solid #317f93; /* teal border */
   border-radius: 8px;
   font-size: 16px;
   outline: none;
+  transition: border 0.3s;
+}
+
+.contact-info-right input:focus,
+.contact-info-right textarea:focus {
+  border-color: #e26b33; /* orange on focus */
 }
 
 .contact-info-right textarea {
@@ -573,7 +481,7 @@ body {
 
 /* Send Button */
 .contact-info-right button.send-button {
-  background: #2563eb;
+  background: #e26b33; /* orange button */
   color: white;
   padding: 15px 20px;
   font-size: 16px;
@@ -585,8 +493,16 @@ body {
 }
 
 .contact-info-right button.send-button:hover {
-  background: #1e40af;
+  background: #317f93; /* teal on hover */
 }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-section {
+    flex-direction: column;
+  }
+}
+
 
 
 

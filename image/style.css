@@ -807,7 +807,7 @@ body {
     position: absolute;
     top: 100%; /* sits directly below navbar */
     right: 0;
-    background: #1e40af;
+    background: #e26b33;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
