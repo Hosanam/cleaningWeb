@@ -34,70 +34,31 @@ body > * {
   z-index: 1;
 }
 
-/* ========================
-   NAVBAR
-======================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1100;
-  background: #2563eb;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.navbar .container {
+.mainContiner {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 60px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.navbar .logo img {
-  width: 140px;
-}
-
-.navbar .menu {
-  /* display: flex; */
   gap: 30px;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.navbar .menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+.booking, .customer-details, .payment-section {
+  flex: 2; /* main form area */
+  min-width: 300px;
 }
 
-.navbar .menu a:hover {
-  color: #d1d5db;
+.summary {
+  flex: 1; /* summary sidebar */
+  min-width: 250px;
+  position: sticky;
+  top: 100px; /* keeps summary visible while scrolling */
 }
 
-/* Book Now Button */
-.navbar .book-btn {
-  background: #facc15;
-  color: #1e3a8a !important;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.navbar .book-btn:hover {
-  background: #eab308;
-}
 
 
 
 /* ========================
    INTRO
 ======================== */
-.intro {
+/* .intro {
   text-align: center;
   padding: 60px 20px 40px;
 }
@@ -106,13 +67,13 @@ body > * {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #062b20;
+  color: #317f93;
 }
 
 .intro p {
   font-size: 18px;
   color: #240ee7;
-}
+} */
 
 /* ========================
    BOOKING FORM
@@ -169,8 +130,19 @@ body > * {
   transition: 0.3s;
 }
 .btn:hover {
-  background: #1e40af;
+  background: #e26b33;
 }
+
+
+
+.form-container { margin: 20px 0; }
+  .form-group { margin-bottom: 15px; }
+  .btn { padding: 10px 20px; cursor: pointer; }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  .summary-label { font-weight: 600; }
+  .full-width { grid-column: 1 / -1; border: none; border-top: 1px solid #ccc; margin: 10px 0; }
+  .payment-methods { display: none; margin-top: 20px; }
+  .payment-option { margin-bottom: 10px; }
 
 /* ========================
    SUMMARY
@@ -244,6 +216,16 @@ body > * {
     padding: 15px 20px;
   }
 
+  .mainContiner {
+    flex-direction: column;
+  }
+  .summary {
+    position: relative;
+    top: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
   /* Hamburger visible on mobile */
   .hamburger {
     display: block;
@@ -297,3 +279,506 @@ body > * {
     clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%);
   }
 }
+
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logoImageDiv a img {
+    border-radius: 5px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #4a6cf7;
+  }
+  
+  .book-btn {
+    background-color: #4a6cf7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .book-btn:hover {
+    background-color: #3b5be3;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .intro {
+    text-align: center;
+    padding: 50px 5%;
+    /* background: linear-gradient(135deg, #4a6cf7 0%, #3b5be3 100%); */
+    color: white;
+  }
+  
+  .intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .intro p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .booking, .summary, .customer-details, .payment-section {
+    padding: 40px 5%;
+    /* max-width: 800px; */
+    margin: 0 auto;
+  }
+  
+  .form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+  }
+  
+  .form-container h2 {
+    margin-bottom: 25px;
+    color: #e26b33;
+    font-size: 1.8rem;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    /* color: #444; */
+  }
+  
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    border: 2px solid #317f93;
+  }
+  
+  .form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #4a6cf7;
+    box-shadow: 0 0 0 2px rgba(74, 108, 247, 0.2);
+  }
+  
+  .btn {
+    background-color: #4a6cf7;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #3b5be3;
+  }
+  
+  .btn-secondary {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #e2e2e2;
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .summary-label {
+    font-weight: 600;
+  }
+  
+  .full-width {
+    grid-column: 1 / -1;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 15px 0;
+  }
+  
+  .payment-methods {
+    margin-top: 30px;
+  }
+  
+  .payment-option {
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  
+  .payment-option:hover {
+    border-color: #4a6cf7;
+  }
+  
+  .payment-option.selected {
+    border-color: #4a6cf7;
+    background-color: rgba(74, 108, 247, 0.05);
+  }
+  
+  .payment-option img {
+    max-width: 150px;
+    margin-top: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+  }
+  
+  /* Progress Bar Styles */
+  .progressbar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 5%;
+    counter-reset: step;
+  }
+  
+  .progress-step {
+    position: relative;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .progress-step:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .progress-step:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: 1;
+  }
+  
+  .progress-step:first-child:after {
+    content: none;
+  }
+  
+  .progress-step.active:before {
+    border-color: #4a6cf7;
+    background-color: #4a6cf7;
+    color: #e26b33;
+  }
+  
+  .progress-step.active:after {
+    background: #4a6cf7;
+  }
+  
+  .progress-step p {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .progress-step.active p {
+    color: #e26b33;
+    font-weight: 600;
+  }
+  
+  .payment-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px 5%;
+  }
+  
+  .payment-methods-column {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .payment-summary-column {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .payment-option-card {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: border 0.3s;
+  }
+  
+  .payment-option-card.selected {
+    border-color: #4a6cf7;
+  }
+  
+  .option-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .option-header .card-icon {
+    height: 25px;
+  }
+  
+  .option-body {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .payment-option-card.selected .option-body {
+    display: block;
+  }
+  
+  .summary-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .amount-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-weight: 500;
+  }
+  
+  .amount-row.total {
+    font-weight: 700;
+    font-size: 18px;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+  }
+  
+  .guarantee-note {
+    margin-top: 15px;
+    color: #48bb78;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .payment-container {
+      flex-direction: column;
+    }
+  }
+  
+  
+  .secure-note {
+    text-align: center;
+    margin-top: 20px;
+    color: #718096;
+    font-size: 14px;
+  }
+  
+  .secure-note i {
+    margin-right: 5px;
+    color: #48bb78;
+  }
+  
+  .error-message {
+    color: #e53e3e;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+  }
+  
+  .form-group.error input, 
+  .form-group.error select {
+    border-color: #e53e3e;
+  }
+  
+  .form-group.error .error-message {
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    
+    .menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .menu.show {
+      display: flex;
+    }
+    
+    .payment-row {
+      flex-direction: column;
+      gap: 0;
+    }
+    
+    .intro h1 {
+      font-size: 2rem;
+    }
+    
+    .intro p {
+      font-size: 1rem;
+    }
+    
+    .progress-step p {
+      display: none;
+    }
+    
+    .progress-step:after {
+      top: 15px;
+    }
+    
+    .btn {
+      width: 100%;
+      margin-right: 0;
+    }
+    .booking-layout{
+      display: inline-block ;
+      flex-direction: column;
+    }
+  }
+
+
+  .booking-layout {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 40px auto;
+    max-width: 1200px;
+  }
+  
+  /* Left form side */
+  .form-continer {
+    flex: 2;
+  }
+  
+  /* Right summary side */
+  .summery-continar {
+    flex: 1;
+    position: sticky;
+    top: 100px; /* keeps it visible while scrolling */
+    height: fit-content;
+  }
+  
+  .summery-continar .form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+  }
+  
+
+  .card-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+  }
+  
+  .card-icons img {
+    height: 30px;
+  }
+  
+  .payment-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-row .form-group {
+    flex: 1;
+  }

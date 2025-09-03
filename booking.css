@@ -1,0 +1,123 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #2563eb;
+    color: white;
+  }
+  
+  .menu a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+  }
+  
+  .book-btn {
+    background: #e26b33;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .intro {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .booking-container {
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .booking-steps {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .form-container {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input, .form-group select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn {
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    background: #ccc;
+    color: #333;
+  }
+  
+  .summary-sidebar {
+    width: 350px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+  }
+  
+  .summary-label {
+    font-weight: bold;
+  }
+  
+  .summary-value {
+    text-align: right;
+  }
+  
+  @media (max-width: 900px) {
+    .booking-container {
+      flex-direction: column;
+    }
+    .summary-sidebar {
+      width: 100%;
+      margin-top: 20px;
+      position: relative;
+      top: auto;
+    }
+  }
+  
